@@ -15,5 +15,5 @@
 	],
 	"main": "js/dist/hypermatrix.js",
 	"homepage": "http://aureooms.github.io/js-hypermatrix/",
-	"version": "0.0.1"
+	"version": "1.0.0"
 }
