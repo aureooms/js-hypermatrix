@@ -5,26 +5,20 @@
 		"test": "./node_modules/.bin/aureooms-node-package-test"
 	},
 	"bugs": {
-		"url": "https://github.com/aureooms/js-matrix/issues"
+		"url": "https://github.com/aureooms/js-hypermatrix/issues"
 	},
-	"description": "matrices code bricks for JavaScript",
+	"description": "hypermatrices code bricks for JavaScript",
 	"repository": {
-		"url": "https://github.com/aureooms/js-matrix.git",
+		"url": "https://github.com/aureooms/js-hypermatrix.git",
 		"type": "git"
 	},
-	"homepage": "http://aureooms.github.io/js-matrix/",
-	"main": "js/dist/matrix.js",
-	"name": "aureooms-js-matrix",
+	"homepage": "http://aureooms.github.io/js-hypermatrix/",
+	"main": "js/dist/hypermatrix.js",
+	"name": "aureooms-js-hypermatrix",
 	"devDependencies": {
 		"aureooms-node-package": "^1.0.0"
 	},
-	"keywords": [
-		"bricks",
-		"javascript",
-		"js",
-		"matrix",
-		"vector"
-	],
+	"keywords": "hypermatrix",
 	"license": "AGPL-3.0",
 	"version": "0.0.1",
 	"dependencies": {},

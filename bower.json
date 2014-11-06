@@ -1,7 +1,7 @@
 {
-	"description": "matrices code bricks for JavaScript",
+	"description": "hypermatrices code bricks for JavaScript",
 	"license": "AGPL-3.0",
-	"name": "aureooms-js-matrix",
+	"name": "aureooms-js-hypermatrix",
 	"ignore": [
 		"js/index.js",
 		"js/src",
@@ -13,7 +13,7 @@
 		".gitignore",
 		"README.md"
 	],
-	"main": "js/dist/matrix.js",
-	"homepage": "http://aureooms.github.io/js-matrix/",
+	"main": "js/dist/hypermatrix.js",
+	"homepage": "http://aureooms.github.io/js-hypermatrix/",
 	"version": "0.0.1"
 }
