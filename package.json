@@ -18,7 +18,9 @@
 	"devDependencies": {
 		"aureooms-node-package": "^1.0.0"
 	},
-	"keywords": "hypermatrix",
+	"keywords": [
+		"hypermatrix"
+	],
 	"license": "AGPL-3.0",
 	"version": "1.0.0",
 	"dependencies": {},
