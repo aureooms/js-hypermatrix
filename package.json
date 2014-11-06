@@ -19,6 +19,8 @@
 		"aureooms-node-package": "^1.0.0"
 	},
 	"keywords": [
+		"vector",
+		"matrix",
 		"hypermatrix"
 	],
 	"license": "AGPL-3.0",
