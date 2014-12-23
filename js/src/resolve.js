@@ -1,17 +1,16 @@
 
 
 
-var resolve = function (a, args) {
-	var i, len;
+var resolve = function ( a , dim , i , last ) {
 
-	len = args.length;
+	for ( ; i <= last ; ++i ) {
 
-	for (i = 1; i < len; ++i) {
-		a = a[args[i]];
+		a = a[args[i]] ;
+
 	}
 
-	return a;
+	return a ;
 
-};
+} ;
 
-exports.resolve = resolve;
+exports.resolve = resolve ;
