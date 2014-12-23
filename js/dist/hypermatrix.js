@@ -3,6 +3,53 @@
 	'use strict';
 
 
+/* js/src/alloc.js */
+
+
+/**
+ * Matrix allocator
+ *
+ * @param {function} ralloc the row allocator function
+ */
+
+var __alloc__ = function ( ralloc ) {
+
+	var alloc ;
+
+	alloc = function ( args , i , last ) {
+
+		var n , a , j ;
+
+		n = args[i] ;
+
+		if ( i === last ) {
+
+			return ralloc( n ) ;
+
+		}
+
+		else {
+
+			a = new Array( n ) ;
+
+			++i;
+
+			for ( j = 0 ; j < n ; ++j ) {
+				a[j] = alloc( args , i , last ) ;
+			}
+
+		}
+
+		return a ;
+
+	} ;
+
+	return alloc ;
+
+} ;
+
+exports.__alloc__ = __alloc__ ;
+
 /* js/src/fill.js */
 
 
@@ -11,126 +58,100 @@
  *
  * @param {Array} a matrix pointer
  * @param {any} v value used to fill the matrix
- * @param {int[]} args list of the size of the different dimensions
- * @param {int} i current index in args
- * @param {int} last last index to consider in args
+ * @param {int[]} dim list of the size of the different dimensions
+ * @param {int} i current index in dim
+ * @param {int} last last index to consider in dim
  *
  */
 
 
-var fill = function(a, v, args, i, last) {
-	var n, a, j;
-	n = args[i];
+var fill = function ( a , v , dim , i , last ) {
 
-	if (i === last) {
-		for (j = 0; j < n; ++j) {
-			a[j] = v;
+	var n , a , j ;
+
+	n = dim[i] ;
+
+	if ( i === last ) {
+
+		for ( j = 0 ; j < n ; ++j ) {
+			a[j] = v ;
 		}
+
 	}
+
 	else {
-		++i;
-		for (j = 0; j < n; ++j) {
-			fill(a, v, args, i, last);
+
+		++i ;
+
+		for ( j = 0 ; j < n ; ++j ) {
+			fill( a[j] , v , dim , i , last );
 		}
+
 	}
 
-	return a;
-};
+	return a ;
 
-exports.fill = fill;
+} ;
 
-/* js/src/matrix.js */
-
-
-/**
- * Matrix builder
- *
- * @param {function} alloc the allocator function
- */
-
-var __matrix__ = function (alloc) {
-
-	var wrap = function () {
-
-		if (arguments.length === 0) {
-			return null;
-		}
-
-		return matrix(arguments, 0, arguments.length - 1);
-
-	};
-
-	var matrix = function(args, i, last) {
-		var n, a, j;
-		n = args[i];
-
-		if (i === last) {
-			return alloc(n);
-		}
-		else {
-			a = new Array(n);
-			++i;
-
-			for (j = 0; j < n; ++j) {
-				a[j] = matrix(args, i, last);
-			}
-		}
-
-		return a;
-	};
-
-	return wrap;
-};
-
-exports.__matrix__ = __matrix__;
+exports.fill = fill ;
 
 /* js/src/resolve.js */
 
 
 
-var resolve = function (a, args) {
-	var i, len;
+var resolve = function ( a , dim , i , last ) {
 
-	len = args.length;
+	for ( ; i <= last ; ++i ) {
 
-	for (i = 1; i < len; ++i) {
-		a = a[args[i]];
+		a = a[args[i]] ;
+
 	}
 
-	return a;
+	return a ;
 
-};
+} ;
 
-exports.resolve = resolve;
+exports.resolve = resolve ;
 
 /* js/src/transpose.js */
 
 
 /**
  * Matrix transposer
+ * @param {int[]} dim dimensions size array
+ * @param {int[]} map the transposition map
+ * @param {int[]} index storage array used to resolve matrix indices
  */
 
 
-var transpose = function(a, b, args, map, index, i, last) {
-	var n, a, j, k;
-	n = args[i];
-	k = map[i];
+var transpose = function ( a , dim , i , last , map , index , b ) {
 
-	if (i === last) {
-		for (j = 0; j < n; ++j) {
-			index[k] = j;
-			a[j] = resolve(b, index);
+	var n , j , k ;
+
+	n = dim[i] ;
+	k = map[i] ;
+
+	if ( i === last ) {
+
+		for ( j = 0 ; j < n ; ++j ) {
+			index[k] = j ;
+			b[j] = resolve( a , index , 0 , index.length - 1 ) ;
 		}
+
 	}
+
 	else {
-		++i;
-		for (j = 0; j < n; ++j) {
-			index[k] = j;
-			transpose(a, b, args, map, index, i, last);
+
+		++i ;
+
+		for ( j = 0 ; j < n ; ++j ) {
+			index[k] = j ;
+			transpose( a , dim , i , last , map , index , b[j] ) ;
 		}
 	}
-};
 
-exports.transpose = transpose;
+} ;
+
+exports.transpose = transpose ;
 
 })(typeof exports === 'undefined' ? this['hypermatrix'] = {} : exports);
