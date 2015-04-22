@@ -1,6 +1,6 @@
 {
 	"description": "hypermatrices code bricks for JavaScript",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"repo": "aureooms/js-hypermatrix",
 	"scripts": [
 		"js/dist/hypermatrix.js"
