@@ -13,5 +13,6 @@ matrices code bricks for JavaScript
 [![Code Climate](http://img.shields.io/codeclimate/github/aureooms/js-hypermatrix.svg?style=flat)](https://codeclimate.com/github/aureooms/js-hypermatrix)
 [![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-hypermatrix.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-hypermatrix)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-hypermatrix.svg?style=flat)](https://github.com/aureooms/js-hypermatrix/issues)
+[![Inline docs](http://inch-ci.org/github/aureooms/js-hypermatrix.svg?branch=master&style=shields)](http://inch-ci.org/github/aureooms/js-hypermatrix)
 
 ***( forked from [js-matrix](https://github.com/aureooms/js-matrix) )***
