@@ -2,7 +2,7 @@
 	"out": "js/dist/",
 	"debug": false,
 	"src": "js/src/",
-	"ns": "hypermatrix",
+	"name": "hypermatrix",
 	"code": {
 		"test": [
 			"test",
