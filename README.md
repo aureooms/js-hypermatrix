@@ -1,4 +1,4 @@
-[js-hypermatrix](http://aureooms.github.io/js-hypermatrix)
+[js-hypermatrix](http://make-github-pseudonymous-again.github.io/js-hypermatrix)
 ==
 
 matrices code bricks for JavaScript

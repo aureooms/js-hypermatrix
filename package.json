@@ -12,7 +12,7 @@
 		"url": "https://github.com/aureooms/js-hypermatrix.git",
 		"type": "git"
 	},
-	"homepage": "http://aureooms.github.io/js-hypermatrix/",
+	"homepage": "http://make-github-pseudonymous-again.github.io/js-hypermatrix/",
 	"main": "js/dist/hypermatrix.js",
 	"name": "@aureooms/js-hypermatrix",
 	"devDependencies": {

@@ -16,6 +16,6 @@
     ".codeclimate.yml"
   ],
   "main": "js/dist/hypermatrix.js",
-  "homepage": "http://aureooms.github.io/js-hypermatrix/",
+  "homepage": "http://make-github-pseudonymous-again.github.io/js-hypermatrix/",
   "version": "1.1.2"
 }
