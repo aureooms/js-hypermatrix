@@ -5,11 +5,11 @@
 		"test": "./node_modules/.bin/aureooms-node-package-test"
 	},
 	"bugs": {
-		"url": "https://github.com/aureooms/js-hypermatrix/issues"
+		"url": "https://github.com/make-github-pseudonymous-again/js-hypermatrix/issues"
 	},
 	"description": "hypermatrices code bricks for JavaScript",
 	"repository": {
-		"url": "https://github.com/aureooms/js-hypermatrix.git",
+		"url": "https://github.com/make-github-pseudonymous-again/js-hypermatrix.git",
 		"type": "git"
 	},
 	"homepage": "http://make-github-pseudonymous-again.github.io/js-hypermatrix/",
